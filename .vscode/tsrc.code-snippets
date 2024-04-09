@@ -1,0 +1,21 @@
+{
+  "ts-react-component": {
+    "prefix": "tsrc",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import type { ReactNode, FC } from 'react'",
+      "",
+      "interface IProps {",
+      "  children?: ReactNode",
+      "}",
+      "",
+      "const ${1:Demo}: FC<IProps> = () => {",
+      "  return <div>${1}</div>",
+      "}",
+      "",
+      "export default memo(${1:Demo})",
+      ""
+    ],
+    "description": "ts-react-component"
+  }
+}
