@@ -1,0 +1,13 @@
+{
+  "style Wrapper": {
+    "prefix": "sw",
+    "body": [
+      "import style from 'styled-components'",
+      "",
+      "export const ${0}Wrapper = style.div`",
+      "",
+      "`"
+    ],
+    "description": "style Wrapper"
+  }
+}
