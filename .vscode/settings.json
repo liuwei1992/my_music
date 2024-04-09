@@ -12,5 +12,7 @@
   "files.associations": {
     "*.ts": "typescript",
     "*.tsx": "typescriptreact"
-  }
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

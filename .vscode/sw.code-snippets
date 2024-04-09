@@ -2,12 +2,12 @@
   "style Wrapper": {
     "prefix": "sw",
     "body": [
-      "import style from 'styled-components'",
+      "import styled from 'styled-components'",
       "",
-      "export const ${0}Wrapper = style.div`",
+      "export const ${0}Wrapper = styled.div`",
       "",
       "`"
     ],
-    "description": "style Wrapper"
+    "description": "styled Wrapper"
   }
 }

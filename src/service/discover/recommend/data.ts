@@ -1,0 +1,87 @@
+export const banners = [
+  {
+    imageUrl:
+      'http://p1.music.126.net/36jo_vvOpr5N2JtC7z39rw==/109951169479992482.jpg',
+    targetId: 14707979,
+    targetType: 1004,
+    titleColor: 'red',
+    typeTitle: '独家策划',
+    exclusive: false,
+    encodeId: '14707979',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971962.-597875044.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/3EXzBqMTGNp651dhysagcg==/109951169479999803.jpg',
+    targetId: 191418779,
+    targetType: 10,
+    titleColor: 'red',
+    typeTitle: '新碟首发',
+    exclusive: false,
+    encodeId: '191418779',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971963.-1354345783.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/vDv4cV8Pu4cehQOEdxxcYw==/109951169480002380.jpg',
+    targetId: 0,
+    targetType: 3000,
+    titleColor: 'blue',
+    typeTitle: '活动',
+    url: 'https://y.music.163.com/g/yida/48ca17594f9849379c6e60921d3d1b1b',
+    exclusive: false,
+    encodeId: '0',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971964.-1354293862.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/12zbai5Ezp--Ps8DpAjabg==/109951169480006774.jpg',
+    targetId: 2141292526,
+    targetType: 1,
+    titleColor: 'red',
+    typeTitle: '新歌首发',
+    exclusive: false,
+    encodeId: '2141292526',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971965.-597881872.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/vm1s42cAOf7XCXXQYBzXAg==/109951169480013160.jpg',
+    targetId: 191491426,
+    targetType: 10,
+    titleColor: 'red',
+    typeTitle: '新碟首发',
+    exclusive: false,
+    encodeId: '191491426',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971966.-1354379364.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/A7yyhhVODm6-cy5NGDdX5w==/109951169480018509.jpg',
+    targetId: 2141341300,
+    targetType: 1,
+    titleColor: 'red',
+    typeTitle: '新歌首发',
+    exclusive: false,
+    encodeId: '2141341300',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971967.-1354262120.null',
+    bannerBizType: 'force_banner',
+  },
+  {
+    imageUrl:
+      'http://p1.music.126.net/VY6UjDrgn_yYLCSRrLmQjA==/109951169480011835.jpg',
+    targetId: 2141979956,
+    targetType: 1,
+    titleColor: 'red',
+    typeTitle: '新歌首发',
+    exclusive: false,
+    encodeId: '2141979956',
+    scm: '1.music-homepage.homepage_banner_force.banner.8971968.-1354229416.null',
+    bannerBizType: 'force_banner',
+  },
+]

@@ -1,13 +1,13 @@
-import style from 'styled-components'
-export const HeaderWrapper = style.div`
+import styled from 'styled-components'
+export const HeaderWrapper = styled.div`
   height: 75px;
   box-sizing: border-box;
   font-size: 14px;
   background: #242424;
   border-bottom: 1px solid #000;
-  color:#fff;
+  color: #fff;
 
-  .content{
+  .content {
     display: flex;
     justify-content: space-between;
     line-height: 70px;
@@ -19,24 +19,24 @@ export const HeaderWrapper = style.div`
   }
 `
 
-export const HeaderLeft = style.div`
+export const HeaderLeft = styled.div`
   display: flex;
 
-  .logo{
+  .logo {
     display: block;
     width: 176px;
     height: 70px;
-    background-position: 0 0
+    background-position: 0 0;
   }
 
-  .title-list{
+  .title-list {
     display: flex;
 
-    .item{
+    .item {
       position: relative;
-      
-      a{
-        display:block;
+
+      a {
+        display: block;
         color: #fff;
         padding: 0 20px;
       }
@@ -61,7 +61,7 @@ export const HeaderLeft = style.div`
     }
   }
 `
-export const HeaderRight = style.div`
+export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   color: #787878;
@@ -96,8 +96,8 @@ export const HeaderRight = style.div`
     }
   }
 
-  .login{
-    cursor:pointer;
+  .login {
+    cursor: pointer;
 
     &:hover {
       color: #ccc;

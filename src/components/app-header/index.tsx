@@ -13,7 +13,7 @@ interface IProps {
 const AppHeader: FC<IProps> = () => {
   function getItem(title: (typeof titels)[0]) {
     return (
-      <div className="item">
+      <div className="item" key={title.link}>
         {title.type == 'path' ? (
           <NavLink to={title.link}>
             {title.title}

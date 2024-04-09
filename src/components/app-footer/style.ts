@@ -1,4 +1,2 @@
-import style from 'styled-components'
-export const FooterWrapper = style.div`
-
-`
+import styled from 'styled-components'
+export const FooterWrapper = styled.div``

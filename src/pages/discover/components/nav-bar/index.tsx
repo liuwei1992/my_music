@@ -17,7 +17,11 @@ const NavBar: FC<IProps> = () => {
     <NavWrapper>
       <div className="content wrap-v1">
         {navList.map((nav) => {
-          return <div className='item'>{getNav(nav)}</div>
+          return (
+            <div className="item" key={nav.title}>
+              {getNav(nav)}
+            </div>
+          )
         })}
       </div>
     </NavWrapper>
