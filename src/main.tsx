@@ -11,10 +11,8 @@ import store from './store'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <Suspense>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 )
