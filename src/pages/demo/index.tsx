@@ -26,7 +26,6 @@ const Demo: FC<IProps> = () => {
       </div>
       <button
         onClick={() => {
-          console.log('执行了')
           dispatch(addCountAction(20))
         }}
       >

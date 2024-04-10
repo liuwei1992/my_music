@@ -1,9 +1,9 @@
-import React, { memo, useEffect, useRef, useState } from 'react'
+import React, { memo, useRef, useState } from 'react'
 import { Carousel } from 'antd'
-import { queryBannerData } from '@/service/discover/recommend'
-import { IBanner } from '@/service/discover/recommend/types'
 import type { ReactNode, FC, ElementRef } from 'react'
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style'
+import { useTypedSelector } from '@/hooks'
+import { shallowEqual } from 'react-redux'
 
 interface IProps {
   children?: ReactNode
@@ -11,13 +11,14 @@ interface IProps {
 
 const Banner: FC<IProps> = () => {
   const bannerRef = useRef<ElementRef<typeof Carousel>>(null)
-  const [banners, setBanners] = useState<IBanner[]>([])
   const [current, setCurrent] = useState<number>(0)
-  useEffect(() => {
-    queryBannerData().then((banners) => {
-      setBanners(banners)
-    })
-  }, [])
+
+  const { banners } = useTypedSelector(
+    (state) => ({
+      banners: state.recommend.banners,
+    }),
+    shallowEqual
+  )
 
   function beforeChange(_: number, next: number) {
     setCurrent(next)
@@ -28,7 +29,8 @@ const Banner: FC<IProps> = () => {
     bgImageUrl = banners[current].imageUrl + '?imageView&blur=40x20'
   }
 
-  console.log('bgImageUrl', bgImageUrl)
+  console.log('-------------', 'Banner')
+
   return (
     <BannerWrapper
       style={{

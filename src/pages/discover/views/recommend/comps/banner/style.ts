@@ -37,6 +37,7 @@ export const BannerLeft = styled.div`
     li > button:hover,
     .slick-active > button {
       background-color: #c20c0c !important;
+      box-shadow: 0 1px 1px 1px #8d1313;
     }
   }
 `
