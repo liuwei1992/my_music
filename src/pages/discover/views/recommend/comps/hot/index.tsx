@@ -2,6 +2,8 @@ import React, { memo } from 'react'
 import type { ReactNode, FC } from 'react'
 import { HotWrapper } from './style'
 import SectionHeader from '@/components/section-header'
+import { useTypedSelector } from '@/hooks'
+import SongMenuItem from '@/components/song-menu-item'
 
 interface IProps {
   children?: ReactNode
@@ -16,6 +18,10 @@ const keywords: [string, string][] = [
 ]
 
 const Hot: FC<IProps> = () => {
+  const { hotRecommends } = useTypedSelector((state) => ({
+    hotRecommends: state.recommend.hotRecommends,
+  }))
+
   return (
     <HotWrapper>
       <SectionHeader
@@ -23,6 +29,11 @@ const Hot: FC<IProps> = () => {
         morePath="/discover/playlist"
         keywords={keywords}
       />
+      <div className="content">
+        {hotRecommends.map((item) => (
+          <SongMenuItem item={item} />
+        ))}
+      </div>
     </HotWrapper>
   )
 }

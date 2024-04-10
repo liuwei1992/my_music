@@ -64,7 +64,7 @@ export const fetchRecommendDataAction = createAsyncThunk(
     })
 
     // 2.热门推荐
-    getHotRecommend().then((res: any) => {
+    getHotRecommend(8).then((res: any) => {
       dispatch(changeHotRecommendAction(res.result))
     })
 

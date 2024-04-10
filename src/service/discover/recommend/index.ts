@@ -13,8 +13,12 @@ export function getTopBanner() {
   return request.get('/banner')
 }
 
-export function getHotRecommend() {
-  return request.get('/personalized')
+export function getHotRecommend(limit = 10) {
+  return request.get('/personalized', {
+    params: {
+      limit,
+    },
+  })
 }
 
 export function getNewAlbum(offset = 0, limit = 10) {
