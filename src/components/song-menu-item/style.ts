@@ -47,6 +47,11 @@ export const SectionWrapper = styled.div`
           height: 17px;
           background-position: 0 0;
         }
+
+        .count {
+          color: #ccc;
+          font-size: 12px;
+        }
       }
     }
   }

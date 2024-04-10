@@ -1,3 +1,50 @@
 import styled from 'styled-components'
 
-export const AlbumWrapper = styled.div``
+export const AlbumWrapper = styled.div`
+  margin-top: 20px;
+
+  .content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 180px;
+    background-color: #f5f5f5;
+    border: 1px solid #d3d3d3;
+    margin: 20px 0 37px;
+
+    .arrow {
+      position: relative;
+      top: -12px;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
+
+    .left {
+      background-position: -260px -75px;
+      &:hover {
+        background-position: -280px -75px;
+      }
+    }
+
+    .center {
+      overflow: hidden;
+      flex: 1;
+      padding: 0 5px;
+
+      .album-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .right {
+      background-position: -300px -75px;
+      &:hover {
+        background-position: -320px -75px;
+      }
+    }
+  }
+`
