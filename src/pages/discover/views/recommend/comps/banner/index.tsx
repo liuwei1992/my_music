@@ -2,7 +2,7 @@ import React, { memo, useRef, useState } from 'react'
 import { Carousel } from 'antd'
 import type { ReactNode, FC, ElementRef } from 'react'
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style'
-import { useTypedSelector } from '@/hooks'
+import { useTypedSelector } from '@/store/hooks'
 import { shallowEqual } from 'react-redux'
 
 interface IProps {

@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react'
 import type { ReactNode, FC } from 'react'
 import Banner from './comps/banner'
-import { useTypeDispatch } from '@/hooks'
+import { useTypeDispatch } from '@/store/hooks'
 import {
   fetchRankingDataAction,
   fetchRecommendDataAction,

@@ -2,7 +2,7 @@ import { memo, Suspense, useEffect } from 'react'
 import type { ReactNode, FC } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-import { useTypeDispatch } from '@/hooks'
+import { useTypeDispatch } from '@/store/hooks'
 import { demoService } from '@/service'
 import { addCountAction } from '@/store/modules/counter'
 

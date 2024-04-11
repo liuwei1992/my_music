@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import type { ReactNode, FC } from 'react'
 import { HotWrapper } from './style'
 import SectionHeader from '@/components/section-header'
-import { useTypedSelector } from '@/hooks'
+import { useTypedSelector } from '@/store/hooks'
 import SongMenuItem from '@/components/song-menu-item'
 
 interface IProps {
@@ -31,7 +31,7 @@ const Hot: FC<IProps> = () => {
       />
       <div className="content">
         {hotRecommends.map((item) => (
-          <SongMenuItem item={item} />
+          <SongMenuItem key={item.id} item={item} />
         ))}
       </div>
     </HotWrapper>

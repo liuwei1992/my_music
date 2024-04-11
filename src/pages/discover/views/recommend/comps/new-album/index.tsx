@@ -3,7 +3,7 @@ import type { ReactNode, FC, ElementRef } from 'react'
 import { AlbumWrapper } from './style'
 import SectionHeader from '@/components/section-header'
 import { Carousel } from 'antd'
-import { useTypedSelector } from '@/hooks'
+import { useTypedSelector } from '@/store/hooks'
 import NewAlbumItem from '@/components/new-album-item'
 
 interface IProps {

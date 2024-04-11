@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { RootState } from '@/hooks/store'
+import { RootState } from '@/store/hooks'
 import { IRecommendState } from './types'
 import {
   getArtistList,

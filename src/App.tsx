@@ -1,10 +1,10 @@
 import { Link, useRoutes } from 'react-router-dom'
-import { shallowEqual } from 'react-redux'
 
 import routes from './router'
 import AppHeader from './components/app-header'
 import AppFooter from './components/app-footer'
 import { Suspense } from 'react'
+import Player from './pages/player'
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <div>{useRoutes(routes)}</div>
       </Suspense>
       <AppFooter />
+      <Player />
     </div>
   )
 }

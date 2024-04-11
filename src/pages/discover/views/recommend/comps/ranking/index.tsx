@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import type { ReactNode, FC } from 'react'
 import { RankingWrapper } from './style'
 import SectionHeader from '@/components/section-header'
-import { useTypedSelector } from '@/hooks'
+import { useTypedSelector } from '@/store/hooks'
 import { shallowEqual } from 'react-redux'
 import RankingItem from './RankingItem'
 
