@@ -50,7 +50,7 @@ export const BarControl = styled.div<IBarControl>`
     width: 36px;
     height: 36px;
     margin: 0 7px;
-    background-position: 0 ${(props) => (props.isPlaying ? '165px' : '-204px')};
+    background-position: 0 ${(props) => (props.isPlaying ? '-165px' : '-204px')};
   }
 
   .next {

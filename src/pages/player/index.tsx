@@ -1,33 +1,67 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect, useRef, useState } from 'react'
 import type { ReactNode, FC } from 'react'
 import { BarControl, Operator, PlayerInfo, PlayerWrapper } from './style'
 import { Slider } from 'antd'
+import { useCurrentPlaySong } from '@/store/modules/player/hooks'
+import { getSizedImage, getSongPlayUrl } from '@/utils'
 
 interface IProps {
   children?: ReactNode
 }
 
 const Player: FC<IProps> = () => {
+  const [currentSong, setCurrentSong] = useCurrentPlaySong()
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    const mp3 = getSongPlayUrl(currentSong.id)
+    console.log(mp3)
+    audioRef.current!.src = mp3
+  }, [currentSong, audioRef])
+
+  // setCurrentSong(386538)
+
+  function handlePlayBtnClick() {
+    // 1.控制播放器的播放/暂停
+    isPlaying
+      ? audioRef.current?.pause()
+      : audioRef.current?.play().catch(() => setIsPlaying(false))
+
+    // 2.改变isPlaying的状态
+    setIsPlaying(!isPlaying)
+  }
+
+  function handleTimeUpdate() {}
+  function handleTimeEnded() {}
+
   return (
     <PlayerWrapper className="sprite_playbar">
       <div className="content wrap-v2">
-        <BarControl isPlaying={false}>
-          <button className="sprite_playbar btn pre"></button>
-          <button className="sprite_playbar btn play"></button>
-          <button className="sprite_playbar btn next"></button>
+        <BarControl isPlaying={isPlaying}>
+          <button
+            className="sprite_playbar btn pre"
+            onClick={() => setCurrentSong({ pre: true })}
+          ></button>
+          <button
+            className="sprite_playbar btn play"
+            onClick={handlePlayBtnClick}
+          ></button>
+          <button
+            className="sprite_playbar btn next"
+            onClick={() => setCurrentSong({ next: true })}
+          ></button>
         </BarControl>
         <PlayerInfo>
           <img
             className="image"
-            src={
-              'http://p1.music.126.net/_W32COgI9Y3aCOw2TZNREw==/125344325584417.jpg?param=34y34'
-            }
+            src={getSizedImage(currentSong?.al?.picUrl, 50)}
           />
           <div className="info">
             <div className="song">
-              <span className="title">相约一九九八</span>
+              <span className="title">{currentSong?.name}</span>
               <i />
-              <span className="singer">那英/王菲</span>
+              <span className="singer">{currentSong?.ar?.[0]?.name}</span>
               <i />
             </div>
 
@@ -55,6 +89,12 @@ const Player: FC<IProps> = () => {
           </div>
         </Operator>
       </div>
+      <audio
+        ref={audioRef}
+        src={''}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={handleTimeEnded}
+      />
     </PlayerWrapper>
   )
 }
