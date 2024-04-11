@@ -3,15 +3,27 @@ import progressBar from '@/assets/img/progress_bar.png'
 import spriteIcon from '@/assets/img/sprite_icon.png'
 import pipIcon from '@/assets/img/pip_icon.png'
 
-export const PlayerWrapper = styled.div`
+interface IPlayerWrapper {
+  hideWrapper: boolean
+}
+export const PlayerWrapper = styled.div<IPlayerWrapper>`
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-position: 0 0;
-  background-repeat: repeat;
-  height: 53px;
+  bottom: ${(props) => (props.hideWrapper ? '-53px' : '0')};
   color: white;
+  transition: bottom 0.5s;
+
+  .placeholder {
+    height: 20px;
+    /* background-color: red; */
+  }
+
+  .section {
+    background-position: 0 0;
+    background-repeat: repeat;
+    height: 53px;
+  }
 
   .content {
     display: flex;

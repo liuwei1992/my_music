@@ -29,8 +29,6 @@ const Banner: FC<IProps> = () => {
     bgImageUrl = banners[current].imageUrl + '?imageView&blur=40x20'
   }
 
-  console.log('-------------', 'Banner')
-
   return (
     <BannerWrapper
       style={{

@@ -13,6 +13,7 @@ const Player: FC<IProps> = () => {
   const [currentSong, setCurrentSong] = useCurrentPlaySong()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [hideWrapper, setHideWrapper] = useState(false)
 
   useEffect(() => {
     const mp3 = getSongPlayUrl(currentSong.id)
@@ -36,65 +37,78 @@ const Player: FC<IProps> = () => {
   function handleTimeEnded() {}
 
   return (
-    <PlayerWrapper className="sprite_playbar">
-      <div className="content wrap-v2">
-        <BarControl isPlaying={isPlaying}>
-          <button
-            className="sprite_playbar btn pre"
-            onClick={() => setCurrentSong({ pre: true })}
-          ></button>
-          <button
-            className="sprite_playbar btn play"
-            onClick={handlePlayBtnClick}
-          ></button>
-          <button
-            className="sprite_playbar btn next"
-            onClick={() => setCurrentSong({ next: true })}
-          ></button>
-        </BarControl>
-        <PlayerInfo>
-          <img
-            className="image"
-            src={getSizedImage(currentSong?.al?.picUrl, 50)}
-          />
-          <div className="info">
-            <div className="song">
-              <span className="title">{currentSong?.name}</span>
-              <i />
-              <span className="singer">{currentSong?.ar?.[0]?.name}</span>
-              <i />
-            </div>
+    <PlayerWrapper
+      hideWrapper={hideWrapper}
+      onPointerLeave={() => {
+        setHideWrapper(true)
+      }}
+    >
+      <div
+        className="placeholder"
+        onPointerEnter={() => {
+          setHideWrapper(false)
+        }}
+      ></div>
+      <div className="section sprite_playbar">
+        <div className="content wrap-v2">
+          <BarControl isPlaying={isPlaying}>
+            <button
+              className="sprite_playbar btn pre"
+              onClick={() => setCurrentSong({ pre: true })}
+            ></button>
+            <button
+              className="sprite_playbar btn play"
+              onClick={handlePlayBtnClick}
+            ></button>
+            <button
+              className="sprite_playbar btn next"
+              onClick={() => setCurrentSong({ next: true })}
+            ></button>
+          </BarControl>
+          <PlayerInfo>
+            <img
+              className="image"
+              src={getSizedImage(currentSong?.al?.picUrl, 50)}
+            />
+            <div className="info">
+              <div className="song">
+                <span className="title">{currentSong?.name}</span>
+                <i />
+                <span className="singer">{currentSong?.ar?.[0]?.name}</span>
+                <i />
+              </div>
 
-            <div className="progress">
-              {/* Slider组件 */}
-              <Slider step={0.5} value={50} tooltip={{ formatter: null }} />
-              <div className="time">
-                <span className="current">00:00</span>
-                <span className="divider">/</span>
-                <span>00:00</span>
+              <div className="progress">
+                {/* Slider组件 */}
+                <Slider step={0.5} value={50} tooltip={{ formatter: null }} />
+                <div className="time">
+                  <span className="current">00:00</span>
+                  <span className="divider">/</span>
+                  <span>00:00</span>
+                </div>
               </div>
             </div>
-          </div>
-        </PlayerInfo>
-        <Operator playMode={1}>
-          <div className="left">
-            <button className="btn pip"></button>
-            <button className="btn sprite_playbar favor"></button>
-            <button className="btn sprite_playbar share"></button>
-          </div>
-          <div className="right sprite_playbar">
-            <button className="btn sprite_playbar volume"></button>
-            <button className="btn sprite_playbar loop"></button>
-            <button className="btn sprite_playbar playlist"></button>
-          </div>
-        </Operator>
+          </PlayerInfo>
+          <Operator playMode={1}>
+            <div className="left">
+              <button className="btn pip"></button>
+              <button className="btn sprite_playbar favor"></button>
+              <button className="btn sprite_playbar share"></button>
+            </div>
+            <div className="right sprite_playbar">
+              <button className="btn sprite_playbar volume"></button>
+              <button className="btn sprite_playbar loop"></button>
+              <button className="btn sprite_playbar playlist"></button>
+            </div>
+          </Operator>
+        </div>
+        <audio
+          ref={audioRef}
+          src={''}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={handleTimeEnded}
+        />
       </div>
-      <audio
-        ref={audioRef}
-        src={''}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleTimeEnded}
-      />
     </PlayerWrapper>
   )
 }
